@@ -1,6 +1,12 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@font-face {
+    font-family: 'Inter Web';
+    font-weight: 400;
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-display: auto;
+  }
 
 /*------------------------------------*\
 #Variables
@@ -25,12 +31,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: 'Inter Web',Helvetica, arial, sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
@@ -47,13 +53,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -67,6 +73,9 @@ Elements: Images
 ---
 Default markup for images to make them responsive
 */
+label, input{
+    display: block;
+}
 
 img {
     max-width: 100%;
@@ -158,18 +167,18 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #2875e7;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #235eb6 ;
 }
 
 /*------------------------------------*\
@@ -189,6 +198,9 @@ a:focus {
 
 .o-row--login {
     /* stuff here to align the card */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 /* size modifiers */
@@ -400,6 +412,7 @@ a:focus {
 */
 
 .o-button-reset {
+    outline: none;
     border: none;
     margin: 0;
     padding: 0;
@@ -431,18 +444,66 @@ a:focus {
     ---
     Website main logo
 */
+.c-logo{
+    height: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.c-logo__symbol{
+    height: 100%;
+    display: block;
+}
+
+.c-logo__path--1{
+    fill: #20223a;
+}
+
+.c-logo__path--2{
+    fill: #3385FF;
+}
+
+.c-logo__path--3{
+    fill: #1B4186;
+}
 
 /*
     Component: Card
     ---
     Card with box shadow
 */
+.c-card{
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 0 3px #00000007;
+}
+
+.c-card__body{
+    padding: 16px 48px;
+}
+
+.c-card__title{
+    text-align: center;
+    padding-top: 48px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.c-card__footer{
+    border-top: 1px solid #E2E3E7;
+    padding: 24px 24px 6px 24px;
+    text-align: center;
+}
 
 /*
     Component: Forms
     ---
     Everything form related here
 */
+.form-field--option{
+    display: flex;
+    align-items: center;
+}
 
 /*
     Component: Input
@@ -451,11 +512,26 @@ a:focus {
 */
 
 .c-input {
-
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: 1px solid #E2E3E7;
+    border-radius: 3px;
+    font-family: inherit;
+    color: #B5B6C0;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 11px;
 }
 
 .c-input:focus {
+    outline: none;
+    border-color: #3385FF;
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px #3385ff4d;
 }
+
 
 /*
     Component: Label
@@ -464,7 +540,15 @@ a:focus {
 */
 
 .c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
+}
 
+.c-label--option{
+    margin-bottom: 0;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -480,19 +564,28 @@ a:focus {
 */
 
 .c-button {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #2E77E6;
+    border-radius: 3px;
+    background-color: #3385FF;
+    color: #FFFFFF;
 
 }
 
 .c-button:hover {
+    background-color: #4F95FF;
 
 }
 
 .c-button:focus {
-
+    outline: none;
+    background-color: #3385FF;
+    box-shadow: 0 0 0 3px #3385ff4d;
 }
 
 .c-button:active {
-
+    background-color: #2E77E6;
 }
 
 .c-button--block {
@@ -599,6 +692,10 @@ a:focus {
 
 .u-text-sm {
     font-size: 14px;
+}
+
+.u-text-grey{
+    color: #757787;
 }
 
 /*
